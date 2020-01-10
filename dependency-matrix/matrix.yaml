@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: vinseyn
+  repo: first_test
+  url: https://github.com/vinseyn/first_test.git
+  version: ""
+  versionURL: ""
