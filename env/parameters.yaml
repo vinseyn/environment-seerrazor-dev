@@ -1,0 +1,10 @@
+adminUser:
+  password: local:seerrazor/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: vincent.seynhaeve@tvh.com
+  token: local:seerrazor/pipelineUser:token
+  username: vinseyn
+prow:
+  hmacToken: local:seerrazor/prow:hmacToken

@@ -1,25 +1,65 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: seerrazor
+  devEnvApprovers:
+  - vinseyn
+  environmentGitOwner: vinseyn
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: terraform-test-temp-vince344
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: europe-west1-d
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    domain: 34.76.169.100.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 34.76.169.100.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: local
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: false
     url: ""
@@ -29,7 +69,9 @@ storage:
   repository:
     enabled: false
     url: ""
+vault: {}
+velero: {}
 versionStream:
-  ref: "master"
+  ref: v1.0.293
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
