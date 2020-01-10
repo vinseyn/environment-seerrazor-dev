@@ -1,0 +1,229 @@
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-7bhzd[0m
+{"level":"warn","ts":1578649585.7748592,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578649585.7774487,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-xsfn2[0m
+{"level":"warn","ts":1578649586.4577088,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1578649586.463517,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-git-source-vinseyn-environment-seerrazor-d-5scv9[0m
+{"level":"warn","ts":1578649600.95378,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578649602.102249,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/environment-seerrazor-dev.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:ed501250df1a920a92f9e5b5760b31c0d215b0b9
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- *******
+reviewers:
+- *******
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 34.76.169.100.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+using version 2.0.1116 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.1116
+Kubernetes cluster v1.13.11-gke.14
+kubectl            v1.17.0
+helm client        Client: v2.14.3+g0e7f3b6
+git                2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Validating Kaniko secret in namespace **
+
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 1
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-178955410/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+Waiting to find the external host name of the ingress controller Service in namespace kube-system with name **ing-nginx-ingress-controller
+No domain flag provided so using default 34.76.169.100.nip.io to generate Ingress rules
+defaulting the domain to 34.76.169.100.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 1
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 1
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-645526865/acme/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name seerrazor found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ******* [Automatically accepted existing value]
+Pipeline bot Git email address vincent.seynhaeve@tvh.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-create-jx-auth-config[0m
+Saved the rendered configuration into templates/**-auth-configmap.yaml file
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-jx-auth-config[0m
+Modified file /workspace/source/systems/**-auth/Chart.yaml to set the chart to version 1
+Ignoring templates/**-auth-configmap.yaml
+No requirements file: /tmp/**-helm-apply-568081689/**-auth/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 1
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.293
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/*******/environment-seerrazor-dev.git
+Validating git repository for production environment at URL https://github.com/*******/environment-seerrazor-production.git
+Using Git provider github at https://github.com
+? Using Git user name: *******
+? Using organisation: *******
+Creating repository *******/environment-seerrazor-production
+Git repository *******/environment-seerrazor-production already exists
+Pushed Git repository to https://github.com/*******/environment-seerrazor-production
+
+Validating git repository for staging environment at URL https://github.com/*******/environment-seerrazor-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: *******
+? Using organisation: *******
+Creating repository *******/environment-seerrazor-staging
+Git repository *******/environment-seerrazor-staging already exists
+Pushed Git repository to https://github.com/*******/environment-seerrazor-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 1
+Ignoring templates/default-group.yaml
+Ignoring templates/*******-first-test-sr.yaml
+No requirements file: /tmp/**-helm-apply-011529145/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.34.76.169.100.nip.io
+Updating webhooks for Owner: ******* and Repository: environment-seerrazor-dev in git server: https://github.com
+Checking hooks for repository *******/environment-seerrazor-dev with user *******
+Found matching hook for url http://hook-**.34.76.169.100.nip.io/hook
+Updating GitHub webhook for *******/environment-seerrazor-dev for url http://hook-**.34.76.169.100.nip.io/hook
+Updating webhooks for Owner: ******* and Repository: environment-seerrazor-production in git server: https://github.com
+Checking hooks for repository *******/environment-seerrazor-production with user *******
+Found matching hook for url http://hook-**.34.76.169.100.nip.io/hook
+Updating GitHub webhook for *******/environment-seerrazor-production for url http://hook-**.34.76.169.100.nip.io/hook
+Updating webhooks for Owner: ******* and Repository: environment-seerrazor-staging in git server: https://github.com
+Checking hooks for repository *******/environment-seerrazor-staging with user *******
+Found matching hook for url http://hook-**.34.76.169.100.nip.io/hook
+Updating GitHub webhook for *******/environment-seerrazor-staging for url http://hook-**.34.76.169.100.nip.io/hook
+Updating webhooks for Owner: ******* and Repository: first_test in git server: https://github.com
+Checking hooks for repository *******/first_test with user *******
+Found matching hook for url http://hook-**.34.76.169.100.nip.io/hook
+Updating GitHub webhook for *******/first_test for url http://hook-**.34.76.169.100.nip.io/hook
+
+Showing logs for build [32mvinseyn-environment-seerrazor-d-fxmss-1[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                        STATUS
+crier-5945df9987-lrclh                     Running
+deck-c554d4f8f-fkbr5                       Running
+deck-c554d4f8f-lxc5t                       Running
+hook-fcb784985-5xzbk                       Running
+hook-fcb784985-q2skr                       Running
+horologium-9cb787cd8-fb6tq                 Running
+jenkins-x-chartmuseum-67f75c4884-w2pwv     Running
+jenkins-x-controllerbuild-6d6c94d5ff-q6tnm Running
+jenkins-x-controllerrole-7b6646f45c-bhl47  Running
+jenkins-x-gcactivities-1578648600-bcnqt    Succeeded
+jenkins-x-gcpods-1578648600-2xc8g          Succeeded
+jenkins-x-heapster-66754b8fc5-rxvjs        Running
+jenkins-x-nexus-64746b5786-t47n2           Running
+pipeline-5ddf8d5979-2hztz                  Running
+pipelinerunner-6848f48958-278gb            Running
+tekton-pipelines-controller-d6dcc4b8-ds4w5 Running
+tide-667ff77444-vfzwl                      Running
+Verifying the git config
+Verifying username ******* at git server github at https://github.com
+Found 0 organisations in git server https://github.com: 
+Validated pipeline user ******* on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
