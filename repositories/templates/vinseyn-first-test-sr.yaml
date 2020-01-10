@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: vinseyn
+    provider: github
+    repository: first_test
+  name: vinseyn-first-test
+spec:
+  description: Imported application for vinseyn/first_test
+  httpCloneURL: https://github.com/vinseyn/first_test.git
+  org: vinseyn
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: first_test
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/vinseyn/first_test.git
